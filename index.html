@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colin Lacasse</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/924a388b64.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script src="index.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "CLh2dCXPnwLlTg0gb",
+            });
+        })();
+    </script>
+</head>
+
+<body>
+    <section id="landing" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="./assets/logo.svg" alt="">
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                        nav__link--anchor
+                        link__hover-effect
+                        link__hover-effect--black
+                        ">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                        nav__link--anchor
+                        "><i class="fa-solid fa-circle-half-stroke"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Hey,</h1>
+                <h1 class="title sub-title green"><b>I'm Colin</b></h1>
+                <p class="header__para">Lorem ipsum <b class="green">dolor sit amet consectetur</b> adipisicing elit.
+                    Sint, maxime magnam
+                    provident ea officia, commodi odio quod, <br> quasi eos deserunt nihil <b class="green" onclick="toggleModal()" style="cursor: pointer;" >non
+                        laborum!</b></p>
+                <div class="social__list">
+                    <div class="social__list">
+                        <a href="#" class=" social__link click">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+                        <a href="#" class=" social__link click">
+                            <i class="fa-brands fa-square-github"></i>
+                        </a>
+                        <a href="#" class=" social__link click">
+                            <i class="fa-solid fa-file-lines"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+        <a href="#projects" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me!</h3>
+                <h4 class="modal__sub--title">Frontend Sodtware Engineer</h4>
+                <p class="modal__para">Lorem ipsum dolor sit <b class="green">amet consectetur</b> adipisicing elit.
+                    Beatae iusto
+                    perspiciatis <br> ab expedita ad at voluptatibus sint nostrum adipisci, laudantium hic libero autem
+                    possimus facere!
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                            alt="">
+                        <span class="modal__language--name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
+                            alt="">
+                        <span class="modal__language--name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"
+                            alt="">
+                        <span class="modal__language--name">React</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/CSS3_logo.svg/2048px-CSS3_logo.svg.png"
+                            alt="">
+                        <span class="modal__language--name">CSS</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <h3 class="modal__title modal__title--contact">Lets have a chat!</h3>
+                <h4 class="modal__sub--title modal__sub--title--contact">I'm open to new opportunities!</h3>
+                    <form action="" id="contact__form" onsubmit="contact(event)">
+                        <div class="form__item">
+                            <label class="form__item--label" for="name">Name</label>
+                            <input class="input" name="user_name" type="text" required></input>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item--label" for="email">Email</label>
+                            <input class="input" name="user_email" type="email" required></input>
+                        </div>
+                        <div class="form__item">
+                            <label class="form__item--label" for="message">Message</label>
+                            <textarea class="input" name="user_message" type="text" required></textarea>
+                        </div>
+                        <button id="contact__submit" class="form__submit">
+                            Send it my way!
+                        </button>
+                    </form>
+                    <div class="modal__overlay modal__overlay--loading">
+                        <i class="fa-solid fa-spinner"></i>
+                    </div>
+                    <div class="modal__overlay modal__overlay--success">Thanks for the message! Looking forwarding to
+                        speaking with you soon!</div>
+                        <i class="fa-solid fa-circle-xmark modal__exit click" onclick="toggleModal()"></i>
+            </div>
+        </div>
+            <img src="./assets/semi circle.svg" class="shape shape__0">
+            <img src="./assets/circle.svg" class="shape shape__1">
+            <img src="./assets/squiggly.svg" class="shape shape__2">
+            <img src="./assets/circle.svg" class="shape shape__3">
+            <img src="./assets/triangle.svg" class="shape shape__4">
+            <img src="./assets/circle.svg" class="shape shape__5">
+            <img src="./assets/squiggly.svg" class="shape shape__6">
+            <img src="./assets/circle.svg" class="shape shape__7">
+            <img src="./assets/semi circle.svg" class="shape shape__8">
+    </section>
+    <section id="projects">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">Here are some of my&nbsp;<span class="green">projects</span></h1>
+                <ul class="projects__list">
+                    <li class="projects">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img project__gradient" alt="">
+                            <div class="project__wrapper--background">
+                                <div class="project__description">
+                                    <h3 class="project__description--title">Car Sales Project</h3>
+                                    <h4 class="project__description--sub-title">HTML, CSS, JavaScript, Vue, Vuex</h4>
+                                    <p class="project__description--para">Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing
+                                        elit. Temporibus tempora, iste corrupti placeat quis laboriosam fuga
+                                        reprehenderit
+                                        pariatur amet possimus qui voluptas ex deserunt itaque dolor maxime dolore
+                                        maiores!
+                                        Quasi, obcaecati debitis. Autem optio, deleniti fugiat adipisci id, ducimus a
+                                        recusandae
+                                        quod nemo fugit delectus, dolorum aliquid incidunt excepturi placeat.
+                                    </p>
+                                    <a href="" class="project__links">
+                                        <i class="fa-brands fa-square-github"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="projects">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img project__gradient" alt="">
+                            <div class="project__wrapper--background">
+                                <div class="project__description">
+                                    <h3 class="project__description--title">Car Sales Project</h3>
+                                    <h4 class="project__description--sub-title">HTML, CSS, JavaScript, Vue, Vuex</h4>
+                                    <p class="project__description--para">Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing
+                                        elit. Temporibus tempora, iste corrupti placeat quis laboriosam fuga
+                                        reprehenderit
+                                        pariatur amet possimus qui voluptas ex deserunt itaque dolor maxime dolore
+                                        maiores!
+                                        Quasi, obcaecati debitis. Autem optio, deleniti fugiat adipisci id, ducimus a
+                                        recusandae
+                                        quod nemo fugit delectus, dolorum aliquid incidunt excepturi placeat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="projects">
+                        <div class="project__wrapper">
+                            <img src="./assets/blinker mockup.png" class="project__img project__gradient" alt="">
+                            <div class="project__wrapper--background">
+                                <div class="project__description">
+                                    <h3 class="project__description--title">Car Sales Project</h3>
+                                    <h4 class="project__description--sub-title">HTML, CSS, JavaScript, Vue, Vuex</h4>
+                                    <p class="project__description--para">Lorem ipsum dolor sit amet consectetur,
+                                        adipisicing
+                                        elit. Temporibus tempora, iste corrupti placeat quis laboriosam fuga
+                                        reprehenderit
+                                        pariatur amet possimus qui voluptas ex deserunt itaque dolor maxime dolore
+                                        maiores!
+                                        Quasi, obcaecati debitis. Autem optio, deleniti fugiat adipisci id, ducimus a
+                                        recusandae
+                                        quod nemo fugit delectus, dolorum aliquid incidunt excepturi placeat.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer__row">
+                <figure class="footer__logo">
+                    <img src="./assets/logo.svg" alt="" class="footer__logo--img">
+                </figure>
+                <div class="footer__social--links">
+                    <a href="#" class="footer__social--list
+                    link__hover-effect
+                    link__hover-effect--white">
+                        Github
+                    </a>
+                    <a href="#" class="footer__social--list
+                link__hover-effect
+                link__hover-effect--white">
+                        LinkedIn
+                    </a>
+                    <a href="#" class="footer__social--list
+            link__hover-effect
+            link__hover-effect--white">
+                        Contact
+                    </a>
+                    <a href="#" class="footer__social--list
+        link__hover-effect
+        link__hover-effect--white">
+                        Resume
+                    </a>
+                </div>
+                <div class="footer__copywrite">
+                    Made by Colin Lacasse
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
