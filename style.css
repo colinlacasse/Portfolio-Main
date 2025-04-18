@@ -7,6 +7,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 li {
   list-style-type: none;
 }
@@ -127,7 +131,8 @@ textarea:focus {
 
 nav,
 .scroll,
-.header {
+.header,
+#projects{
   opacity: 1;
   visibility: visible;
   transition: all 600ms 600ms;
@@ -135,7 +140,8 @@ nav,
 
 .modal__open nav,
 .modal__open .scroll,
-.modal__open .header {
+.modal__open .header,
+.modal__open #projects {
   opacity: 0;
   visibility: hidden;
   transition: all 400ms ease;
@@ -237,12 +243,14 @@ Landing
   align-items: center;
   border-radius: 50%;
   border: none;
-  position: absolute;
+  position: fixed;
+  z-index: 6;
   bottom: 32px;
   right: 40px;
   opacity: 1;
   visibility: visible;
   transition: opacity 200ms 600ms;
+  transition: all 300ms ease;
 }
 
 .scroll {
@@ -341,6 +349,10 @@ Modal
   visibility: hidden;
   z-index: -1;
   transition: visibility 1s, z-index 1s, box-shadow 500ms ease;
+}
+
+.modal__open {
+    /* overflow: hidden; */
 }
 
 .modal__open .modal {
@@ -601,6 +613,7 @@ Footer
 */
 
 footer {
+    position: relative;
   background-color: #242424;
   padding: 6% 0;
 }
@@ -640,43 +653,113 @@ Shapes
     position: fixed;
     height: 25px;
     width: 25px;
+    transition: opacity 600ms 400ms;
+}
+
+.modal__open .shape {
+    visibility: hidden;
+    opacity: 0;
 }
 
 .shape__0 {
     top: 15vh;
-    left: 5vw;
+    left: 10vw;
     
 }
 .shape__1 {
     top: 15vh;
-    left: 50vw;
+    left: 60vw;
 }
 .shape__2 {
     top: 15vh;
-    left: 80vw;
+    left: 90vw;
 }
 .shape__3 {
     top: 50vh;
-    left: 5vw;
+    left: 10vw;
 }
 .shape__4 {
     top: 50vh;
-    left: 50vw;
+    left: 60vw;
 }
 .shape__5 {
     top: 50vh;
-    left: 80vw;
+    left: 90vw;
 }
 .shape__6 {
     top: 80vh;
-    left: 5vw;
+    left: 10vw;
 }
 .shape__7 {
     top: 80vh;
-    left: 50vw;
+    left: 60vw;
 }
 .shape__8 {
     top: 80vh;
-    left: 80vw;
+    left: 90vw;
+}
+
+/* 
+
+RESPONSIVE DESIGN
+
+*/
+
+/* Tablet styles (for screens up to 768px) */
+@media (max-width: 768px) {
+   .title{
+    font-size: 80px;
+   }
+   .header__para{
+    font-size: 20px;
+   }
+   .shape__3, .shape__4{
+    visibility: hidden;
+   }
+   .modal {
+    top: 0%;
+    left: 10%;
+    bottom: 0%;
+    transform: none;
+    height: auto;
+    width: 80%;
+    flex-direction: column-reverse;
+   }
+   .modal__half{
+    width: 100%;
+    border-radius: 0;
+   }
+
+   textarea {
+    height: 40px;
+   }
+  }
+
+  /* small phones  */
+@media (max-width: 480px){
+    .title {
+        font-size: 52px;
+    }
+    .header__para {
+        font-size: 18px;
+    }
+    .nav__link:first-child{
+        display: none;
+    }
+    .project__description--para {
+        display: none;
+    }
+    .project__description{
+        left: 0;
+        padding: 0;
+        width: 100%;
+        text-align: center;
+    }
+    .project__description--sub-title{
+        margin-bottom: 8px;
+    }
+    .modal__half{
+        padding: 40px;
+    }
 }
 

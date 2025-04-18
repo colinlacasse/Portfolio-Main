@@ -60,7 +60,8 @@
                 <h1 class="title sub-title green"><b>I'm Colin</b></h1>
                 <p class="header__para">Lorem ipsum <b class="green">dolor sit amet consectetur</b> adipisicing elit.
                     Sint, maxime magnam
-                    provident ea officia, commodi odio quod, <br> quasi eos deserunt nihil <b class="green" onclick="toggleModal()" style="cursor: pointer;" >non
+                    provident ea officia, commodi odio quod, <br> quasi eos deserunt nihil <b class="green"
+                        onclick="toggleModal()" style="cursor: pointer;">non
                         laborum!</b></p>
                 <div class="social__list">
                     <div class="social__list">
@@ -77,9 +78,11 @@
                 </div>
             </div>
         </header>
-        <button class="mail__btn click" onclick="toggleModal()">
-            <i class="fa-solid fa-envelope"></i>
-        </button>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fa-solid fa-envelope"></i>
+            </button>
+        </a>
         <a href="#projects" class="scroll">
             <div class="scroll__icon click"></div>
         </a>
@@ -101,8 +104,7 @@
                     </figure>
                     <figure class="modal__language">
                         <img class="modal__language--img"
-                            src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png"
-                            alt="">
+                            src="https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="">
                         <span class="modal__language--name">JavaScript</span>
                     </figure>
                     <figure class="modal__language">
@@ -144,23 +146,23 @@
                     </div>
                     <div class="modal__overlay modal__overlay--success">Thanks for the message! Looking forwarding to
                         speaking with you soon!</div>
-                        <i class="fa-solid fa-circle-xmark modal__exit click" onclick="toggleModal()"></i>
+                    <i class="fa-solid fa-circle-xmark modal__exit click" onclick="toggleModal()"></i>
             </div>
         </div>
-            <img src="./assets/semi circle.svg" class="shape shape__0">
-            <img src="./assets/circle.svg" class="shape shape__1">
-            <img src="./assets/squiggly.svg" class="shape shape__2">
-            <img src="./assets/circle.svg" class="shape shape__3">
-            <img src="./assets/triangle.svg" class="shape shape__4">
-            <img src="./assets/circle.svg" class="shape shape__5">
-            <img src="./assets/squiggly.svg" class="shape shape__6">
-            <img src="./assets/circle.svg" class="shape shape__7">
-            <img src="./assets/semi circle.svg" class="shape shape__8">
+        <img src="./assets/semi circle.svg" class="shape shape__0">
+        <img src="./assets/circle.svg" class="shape shape__1">
+        <img src="./assets/squiggly.svg" class="shape shape__2">
+        <img src="./assets/circle.svg" class="shape shape__3">
+        <img src="./assets/triangle.svg" class="shape shape__4">
+        <img src="./assets/circle.svg" class="shape shape__5">
+        <img src="./assets/squiggly.svg" class="shape shape__6">
+        <img src="./assets/circle.svg" class="shape shape__7">
+        <img src="./assets/semi circle.svg" class="shape shape__8">
     </section>
     <section id="projects">
         <div class="container">
             <div class="row">
-                <h1 class="section__title">Here are some of my&nbsp;<span class="green">projects</span></h1>
+                <h1 class="title section__title">Here are some of my projects</h1>
                 <ul class="projects__list">
                     <li class="projects">
                         <div class="project__wrapper">
@@ -249,15 +251,15 @@
                 link__hover-effect--white">
                         LinkedIn
                     </a>
-                    <a href="#" class="footer__social--list
+                    <a href="./assets/David Bragg Resume.pdf" target="_blank" class="footer__social--list
             link__hover-effect
             link__hover-effect--white">
-                        Contact
+                        Resume
                     </a>
-                    <a href="#" class="footer__social--list
+                    <a href="#" onclick="toggleModal()" class="footer__social--list
         link__hover-effect
         link__hover-effect--white">
-                        Resume
+                        Contact
                     </a>
                 </div>
                 <div class="footer__copywrite">
