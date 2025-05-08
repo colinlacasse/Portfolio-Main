@@ -192,6 +192,18 @@ nav,
   filter: invert(1);
 }
 
+.dark__theme .shape {
+    opacity: 0;
+    transition: opacity 300ms ease ;
+}
+
+.dark__theme .star,
+.dark__theme .shape__rocket {
+    visibility: visible;
+    opacity: 1;
+    filter: none;
+}
+
 /* 
 
 Landing 
@@ -356,10 +368,6 @@ Modal
   visibility: hidden;
   z-index: -1;
   transition: visibility 1s, z-index 1s, box-shadow 500ms ease;
-}
-
-.modal__open {
-    /* overflow: hidden; */
 }
 
 .modal__open .modal {
@@ -659,7 +667,8 @@ Shapes
 
 .shape {
     position: absolute;
-    transition: opacity 600ms 400ms;}
+    transition: opacity 600ms 400ms;
+}
 
 .shape__plane {
     height: 200px;
@@ -694,12 +703,10 @@ Shapes
     left: -20vw;
     width: 800px;
 }
-.shape__plane {
-    top: 50vh;
-    left: 90vw;
+.shape__plane, .shape__rocket {
     filter: invert(90%) sepia(11%) saturate(12%) hue-rotate(314deg) brightness(75%) contrast(87%);
     position: absolute;
-    animation: moveAcross 10s linear infinite, moveUpDown 3s ease-in-out infinite;
+    animation: moveAcross 9s linear infinite, moveUpDown 3s ease-in-out infinite;
 }
 @keyframes moveAcross {
     from {
@@ -712,16 +719,70 @@ Shapes
 
   @keyframes moveUpDown {
     0% {
-        top: 40%;
+        top: 20%;
     }
     50% {
-        top: 50%;
+        top: 30%;
     }
     100% {
-        top: 40%;
+        top: 20%;
     }
   }
 
+
+  .star {
+    width: 30px;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  .star__0 {
+    top: 15vh;
+    left: 5vw;
+    
+}
+.star__1 {
+    top: 15vh;
+    left: 50vw;
+}
+.star__2 {
+    top: 15vh;
+    left: 80vw;
+    width: 200px;
+}
+.star__3 {
+    top: 50vh;
+    left: 5vw;
+}
+.star__4 {
+    top: 50vh;
+    left: 50vw;
+}
+.star__5 {
+    top: 50vh;
+    left: 80vw;
+}
+.star__6 {
+    top: 80vh;
+    left: 5vw;
+}
+.star__7 {
+    top: 80vh;
+    left: 50vw;
+}
+.star__8 {
+    top: 80vh;
+    left: 80vw;
+}
+
+.shape__rocket {
+    visibility: hidden;
+    opacity: 0;
+    height: 200px;
+    width: 200px;
+    z-index: 1;
+}
+  
 /* 
 
 RESPONSIVE DESIGN
